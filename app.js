@@ -12,6 +12,7 @@
  * Requests/endpoints:
  *  GET /info/:name
  *  GEt /categories/:category
+ *  GET /daily_fact
  */
 
 "use strict";

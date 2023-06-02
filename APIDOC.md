@@ -9,85 +9,40 @@ The motorsports API provides functionality to retrieve information from a databa
 of information about Formula 1, Indycar, and other interesting motorsports facts. 
 
 Clients can retrieve information about certain topics and compare/contrast betwen
-Formula1 and Indycar, such as cars, teams, etc, which are returned as JSON objects. Functionality is also provided to get a fun fact of the day. The API returns this information as text. 500-level errors refer to server-side errors, while 400-level errors refer to client-side errors. 
+Formula1 and Indycar, such as cars, teams, etc, which are returned as JSON objects. Functionality is also provided to get a fun fact of the day. The API returns this information as text.
 
 Summary of endpoints:
-* GET /menu
-* GET /menu/:category
-* GET /categories
-* GET /images
-* POST /contact
-* POST /addItem
+* GET /info/:name
+* GET /categories/:category
+* GET /daily_fact
 ...
 
 In the current version of this API, all error responses are returned as plain text. Any 500 errors represent a server-side issue and include a generic error message. Any 400-level errors represent an invalid request by a client, and are documented appropriately for any parameterized endpoint.
 
-Contact the author at hovik@caltech.edu for any bug reports or feature requests!
+Contact the author at emilypan@caltech.edu for any bug reports or feature requests!
 
-## *GET /menu*
+## *GET /info/:name*
 **Returned Data Format**: JSON
 
 **Description:**
-Returns a JSON collection of categories and items available on the #C0FFEE Cafe menu.
+Returns a JSON collection of all F1 or Indycar data available to display.
 
 **Parameters**
-* mini=true (optional)
-  * Returns a minified version of the menu if passed as "true"
+* /:name (required): The name of the racing type information you are seeking to display (either "indycar" or "f1"). 
 
-**Example Request:** `menu?mini=true`
+**Example Request:** `/info/f1`
 
 **Example Response:**
 ```json
-{
-  "categories": {
-    "Drinks": [
-      {
-        "name": "Bubble Tea",
-        "image": "tea.png",
-        "description": "Bubbles.",
-        "in-stock": true
-      },
-      {
-        "name": "Classic Coffee",
-        "image": "coffee.png",
-        "description": "The classic.",
-        "in-stock": true
-      },
-      {
-        "name": "The Sippy",
-        "image": "the-sippy.png",
-        "description": "The classic. In a sippy cup.",
-        "in-stock": false
-      }
-    ],
-    "Foods": [
-      {
-        "name": "Baguette",
-        "image": "baguette.jpg",
-        "description": "A Baguette.",
-        "in-stock": true
-      },
-      {
-        "name": "Cereal",
-        "image": "cereal.png",
-        "description": "To complement the most important drink of the day.",
-        "in-stock": true
-      },
-      {
-        "name": "Coffee Noodles",
-        "image": "noodles.jpg",
-        "description": "The next big thing.",
-        "in-stock": true
-      },
-      {
-        "name": "Doughnut",
-        "image": "doughnut.png",
-        "description": "We don't have bagels.",
-        "in-stock": false
-      }
-    ]
-  }
-}
+{"data":
+  {"cars":
+    [{"category":"cars",
+       "path":"info/f1/cars/development.txt",
+       "text": "Each F1 car is uniquely engineered to suit the individual drivers and typically undergo more development by each team. F1 cars are often very different from one another in both engineering and performance." },
+      {"category":"cars",
+       "path":"info/f1/cars/engine.txt",
+       "text":"Despite having less engine capacity, F1 cars are more powerful, capable of generating around 1000 BHP. Both"},
+      {"category":"cars","path":"info/f1/cars/type.txt","text":"F1 is a high-speed open-top car race which usees 1.6L V6 engine cars."}],"races":[{"category":"races","path":"info/f1/races/locations.txt","text":"F1 tracks all have different shapes, with designated tracks and street circuits. These tracks typically have to be of higher grade than those of Indycar. F1 races are international, covering the 5 continents while Indycar races mostly occur in the United States."}],"teams":[{"category":"teams","path":"info/f1/teams/teams.txt","text":"The F1 teams are: Alfa Romeo, AlphaTauri, Aston Martin, Ferrari, Haas, McLaren, Mercedes, Red Bull, and Williams."}]}}
 ```
 
 ## *GET /menu/:category*
