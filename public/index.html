@@ -1,0 +1,254 @@
+<!DOCTYPE html> 
+<!--
+    Author: Emily Pan 
+    CS 132 Spring 2023
+    This is the index.html webpage to share facts and 
+    information about Formula 1, including links to learn
+    more about Formula 1 vs. Indycar, which is a similar
+    racing series. 
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formula 1 Facts</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script defer src="formula1.js"></script>
+        <script src="helpers.js"></script>
+    </head>
+    <body>
+        <!-- Top header -->
+        <header>
+            <h1>Emily's F1 Info Page</h1>
+            <nav>
+                <ul class = "nav-bar">
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="compare.html">F1 vs. Indycar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div id="f1-intro" class="wrapper">
+                <!-- Formula 1 Section -->
+                <header>
+                    <h2>What is Formula 1?</h2>
+                </header>
+                <p>
+                    Formula 1 is about speed, skill, and engineering. 
+                </p>
+                <p>Formula 1 races, called Grands Prix happen
+                    around the world. The nations represented this year are:</p>
+
+                <button id="flags-btn">Toggle flags</button>
+                <button id="flags-remove-btn">Remove Flag Icons</button>
+                <div id="flags" class="hidden">
+                    <article>
+                        <!-- Source for all flag images: Wikipedia 
+                        https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Bahrain.svg/240px-Flag_of_Bahrain.svg.png" 
+                        alt="Bahrain Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/240px-Flag_of_Saudi_Arabia.svg.png"
+                        alt="Saudi Arabia Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/240px-Flag_of_Australia_%28converted%29.svg.png"
+                        alt="Australia Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Azerbaijan.svg/240px-Flag_of_Azerbaijan.svg.png"
+                        alt="Azerbaijan Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/240px-Flag_of_the_United_States.svg.png"
+                        alt="USA Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/240px-Flag_of_Italy.svg.png"
+                        alt="Italy Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Monaco.svg/240px-Flag_of_Monaco.svg.png"
+                        alt="Monaco Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/240px-Flag_of_Spain.svg.png"
+                        alt="Spain Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/240px-Flag_of_Canada.svg.png"
+                        alt="Canada Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/240px-Flag_of_Austria.svg.png"
+                        alt="Austria Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/240px-Flag_of_the_United_Kingdom.svg.png"
+                        alt="UK Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/240px-Flag_of_Hungary.svg.png"
+                        alt="Hungary Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/240px-Flag_of_Belgium.svg.png"
+                        alt="Belgium Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/240px-Flag_of_the_Netherlands.svg.png"
+                        alt="Netherlands Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/240px-Flag_of_Singapore.svg.png"
+                        alt="Singaproe Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/240px-Flag_of_Japan.svg.png"
+                        alt="Japan Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/240px-Flag_of_Qatar.svg.png"
+                        alt="Qatar Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/240px-Flag_of_Mexico.svg.png"
+                        alt="Mexico Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/240px-Flag_of_Brazil.svg.png"
+                        alt="Brazil Flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/240px-Flag_of_the_United_Arab_Emirates.svg.png"
+                        alt="UAE Flag">
+                        <figure>
+                            <figcaption id="flags-source">Flag Images by  
+                                <a href="https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags">Wikipedia</a></figcaption>
+                        </figure>
+                    </article>
+                </div>
+                <p>The first F1 race occurred in 1950. Back then, this is what
+                    the cars loooked like: </p>
+                <figure id="car1">
+                    <!--Open Source Image found on Google Images -->
+                    <img src="img/1950_car.jpeg" alt="1950 F1 Car">
+                </figure>
+                <p>Now, this is what modern F1 cars look like:</p>
+                <figure id="car2">
+                    <!-- Image from Scuderia AlphaTauri -->
+                    <img src="img/2023_car.jpeg" alt="2023 F1 Car">
+                </figure>
+                <div id="news">
+                    <h2>Recent F1 News</h2>
+                    <button id="test-button">test</button>
+                </div>
+            </div>
+            <aside>
+                <h3>Current Constructor's Championship Standings</h3>
+                <ol>
+                    <li>Red Bull: 123 Points</li>
+                    <li>Aston Martin: 65 Points</li>
+                    <li>Mercedes: 56 Points</li>
+                    <li>Ferrari: 26 Points</li>
+                    <li>Mclaren: 12 Points</li>
+                    <li>Alpine: 8 Points</li>
+                    <li>Haas: 7 Points</li>
+                    <li>Alfa Romeo: 6 Points</li>
+                    <li>AlphaTauri: 1 Point</li>
+                    <li>Williams: 1 Point</li>
+                </ol>
+                <h3>Current Driver's Championship Standings</h3>
+                <ol>
+                    <li>Max Verstappen
+                        <ul>
+                            <li>Team: Red Bull</li>
+                            <li>Season points: 69</li>
+                        </ul>
+                    </li>
+                    <li>Sergio Perez
+                        <ul>
+                            <li>Team: Red Bull</li>
+                            <li>Season Points: 54</li>
+                        </ul>
+                    </li>
+                    <li>Fernando Alonso
+                        <ul>
+                            <li>Team: Aston Martin</li>
+                            <li>Season Points: 45</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Lewis Hamilton
+                        <ul>
+                            <li>Team: Mercedes</li>
+                            <li>Season Points: 38</li>
+                        </ul>
+                    </li>
+                    <li>Carlos Sainz Jr.
+                        <ul>
+                            <li>Team: Ferrari</li>
+                            <li>Season Points: 20</li>
+                        </ul>
+                    </li>
+                    <li>Lance Stroll
+                        <ul>
+                            <li>Team: Aston Martin</li>
+                            <li>Season Points: 20</li>
+                        </ul>
+                    </li>
+                    <li>George Russell
+                        <ul>
+                            <li>Team: Mercedes</li>
+                            <li>Season Points: 18</li>
+                        </ul>
+                    </li>
+                    <li>Lando Norris
+                        <ul>
+                            <li>Team: Mclaren</li>
+                            <li>Season Points: 8</li>
+                        </ul>
+                    </li>
+                    <li>Nico Hulkenberg
+                        <ul>
+                            <li>Team: Haas</li>
+                            <li>Season Points: 6</li>
+                        </ul>
+                    </li>
+                    <li>Charles Leclerc
+                        <ul>
+                            <li>Team: Ferrari</li>
+                            <li>Season Points: 6</li>
+                        </ul>
+                    </li>
+                    <li>Valterri Bottas
+                        <ul>
+                            <li>Team: Alfa Romeo</li>
+                            <li>Season Points: 4</li>
+                        </ul>
+                    </li>
+                    <li>Esteban Ocon
+                        <ul>
+                            <li>Team: Alpine</li>
+                            <li>Season Points: 4</li>
+                        </ul>
+                    </li>
+                    <li>Oscar Piastri
+                        <ul>
+                            <li>Team: Mclaren</li>
+                            <li>Season Points: 4</li>
+                        </ul>
+                    </li>
+                    <li>Pierre Gasly
+                        <ul>
+                            <li>Team: Alpine</li>
+                            <li>Season Points: 4</li>
+                        </ul>
+                    </li>
+                    <li>Zhou Guanyu
+                        <ul>
+                            <li>Team: Alfa Romeo</li>
+                            <li>Season Points: 2</li>
+                        </ul>
+                    </li>
+                    <li>Yuki Tsunoda
+                        <ul>
+                            <li>Team: AlphaTauri</li>
+                            <li>Season Points: 1</li>
+                        </ul>
+                    </li>
+                    <li>Kevin Magnussen
+                        <ul>
+                            <li>Team: Haas</li>
+                            <li>Season Points: 1</li>
+                        </ul>
+                    </li>
+                    <li>Alex Albon
+                        <ul>
+                            <li>Team: Williams</li>
+                            <li>Season Points: 1</li>
+                        </ul>
+                    </li>
+                    <li>Logan Seargant
+                        <ul>
+                            <li>Team: Williams</li>
+                            <li>Season Points: 0</li>
+                        </ul>
+                    </li>
+                    <li>Nyck de Vries
+                        <ul>
+                            <li>Team: AlphaTauri</li>
+                            <li>Season Points: 0</li>
+                        </ul>
+                    </li>
+                </ol>
+            </aside>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+/*
+    Name: Emily Pan
+    CS 132 Spring 2023
+    Date: April 14, 2023
+    This is the styles.css page for my Formula 1 informational
+    website. It is used by both formula1.html and compare.html
+    to give a consistent look and feel across both webpages.
+    Currently, the theme is basic and features color and style
+    familiar to international motorsports. 
+
+*/
+
+/* Imports Noto Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Navigation bar */
+nav li {
+    display: inline;
+    list-style-type: none;
+    font-size: 18pt;
+    /* outset creates button effect*/
+    border: outset;
+    border-width: thick;
+    border-color: gray;
+    padding: 5px;
+}
+
+body {
+    background-color: rgb(213, 212, 212);
+    padding-left: 10px;
+    padding-right: 10px; 
+    /* Using imported Google Font Noto Sans*/
+    font-family: Noto Sans, sans-serif;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+p, aside, .category-buttons {
+    font-size: 14pt;
+}
+  
+main {
+    display: flex;
+    flex-grow: 2;
+}
+
+h2, h3 {
+    color: rgb(117, 12, 12);
+}
+
+figure {
+    margin: auto auto; 
+  }
+
+figure, figure img {
+    width: 70%;
+}
+
+aside {
+    width: 40%;
+    display: inline-block;
+}
+
+aside > ol {
+    columns: 2;
+}
+
+.wrapper {
+    width: 60%;
+}
+
+.comparison {
+    width: 50%;
+}
+
+.wrapper, .comparison, aside {
+    padding: 10px;
+}
+
+section {
+    flex-grow: 2
+}
+
+article img {
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+figcaption {
+    font-size: 10pt;
+    font-style: italic;
+}
+
+
+.hidden, .hide-imgs {
+    display: none;
+}
+
+#buttons-wrapper {
+    width: 25%;
+}
+
+.category-buttons {
+    margin: 5px;
+}
