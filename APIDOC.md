@@ -37,12 +37,25 @@ Returns a JSON collection of all F1 or Indycar data available to display.
 {"data":
   {"cars":
     [{"category":"cars",
-       "path":"info/f1/cars/development.txt",
-       "text": "Each F1 car is uniquely engineered to suit the individual drivers and typically undergo more development by each team. F1 cars are often very different from one another in both engineering and performance." },
-      {"category":"cars",
+        "path":"info/f1/cars/development.txt",
+        "text": "Each F1 car is uniquely engineered to suit the individual drivers and typically undergo more development by each team. F1 cars are often very different from one another in both engineering and performance." },
+    {"category":"cars",
        "path":"info/f1/cars/engine.txt",
        "text":"Despite having less engine capacity, F1 cars are more powerful, capable of generating around 1000 BHP. Both"},
-      {"category":"cars","path":"info/f1/cars/type.txt","text":"F1 is a high-speed open-top car race which usees 1.6L V6 engine cars."}],"races":[{"category":"races","path":"info/f1/races/locations.txt","text":"F1 tracks all have different shapes, with designated tracks and street circuits. These tracks typically have to be of higher grade than those of Indycar. F1 races are international, covering the 5 continents while Indycar races mostly occur in the United States."}],"teams":[{"category":"teams","path":"info/f1/teams/teams.txt","text":"The F1 teams are: Alfa Romeo, AlphaTauri, Aston Martin, Ferrari, Haas, McLaren, Mercedes, Red Bull, and Williams."}]}}
+    {"category":"cars",
+      "path":"info/f1/cars/type.txt",
+      "text":"F1 is a high-speed open-top car race which usees 1.6L V6 engine cars."}],
+  "races":
+        [{"category":"races",
+        "path":"info/f1/races/locations.txt",
+        "text":"F1 tracks all have different shapes, with designated tracks and street circuits. These tracks typically have to be of higher grade than those of Indycar. F1 races are international, covering the 5 continents while Indycar races mostly occur in the United States."}],
+  "teams":
+  [{"category":"teams",
+    "path":"info/f1/teams/teams.txt",
+    "text":"The F1 teams are: Alfa Romeo, AlphaTauri, Aston Martin, Ferrari, Haas, McLaren, Mercedes, Red Bull, and Williams."}
+    ]
+  }
+}
 ```
 
 ## *GET /menu/:category*
