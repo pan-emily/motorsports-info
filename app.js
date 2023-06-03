@@ -64,7 +64,7 @@ app.get("/info/:name", async (req, res, next) => {
         }
     } catch (err) {
         res.status(SERVER_ERR_CODE);
-        err.message = SERVER_ERROR;
+        err.message = "Racing type not found. " + SERVER_ERROR;
         next(err);
     }
 });
@@ -89,7 +89,7 @@ app.get("/categories/:category", async (req, res, next) => {
     } catch (err) {
         res.status(SERVER_ERR_CODE);
         res.type("text");
-        res.status(500).send(SERVER_ERROR);
+        res.status(500).send("Could not find this motorsport. " + SERVER_ERROR);
         next(err);
     }
 });
@@ -113,7 +113,7 @@ app.get("/daily_fact", async (req, res, next) => {
     } catch (err) {
         res.status(SERVER_ERR_CODE);
         res.type("text");
-        res.status(500).send(SERVER_ERROR);
+        res.status(500).send("Could not find today's fun fact. " + SERVER_ERROR);
         next(err);
     }
 });

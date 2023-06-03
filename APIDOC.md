@@ -57,65 +57,56 @@ Returns a JSON collection of all F1 or Indycar data available to display.
   }
 }
 ```
+**Error Handling:**
+* 400: Invalid request if the racing type isn't f1 or indycar. 
 
-## *GET /menu/:category*
-**Returned Data Format**: JSON
+**Example Request:** `/info/badracingtype`
 
-**Description:** 
-Returns JSON data with items for the given category, if valid (ignoring letter-casing). 
+**Example Response:**
+```Racing type not found. ```
 
-**Supported parameters**
-* /:category (required)
-  * Category name for items to search for.
+## *GET /categories/:category
+**Returned Data Format**: Array[{String}]
 
-**Example Request:** `/menu/drinks` or `/menu/Drinks`
+**Description:**
+Returns a text array of all the categories available. 
+
+**Parameters**
+* /:category (required): The name of the racing category information you are seeking to display. 
+
+**Example Request:** `/categories/f1`
 
 **Example Response:**
 ```json
-[
-  "bubble-tea",
-  "classic-coffee",
-  "the-sippy"
-]
+{"categories" : ["cars","races","teams"]}
 ```
-
 **Error Handling:**
-* 400: Invalid request if given a category that does not currently exist on the store.
+* 500: Invalid request if the motorsport you are trying to get the categories of does not have a directory in the database. 
 
-**Example Request:** `/menu/badcategory`
-
-**Example Response:**
-```Category badcategory not found.```
-
-
-## *POST /contact*
-**Returned Data Format**: Plain Text
-
-**Description:** 
-Sends information to the Cafe web service for a "Contact Us" endpoint, including the name of the user, their email, and a text message. Returns a response about whether the information was successfully sent, otherwise provides details about an erroneous request.
-
-**Supported Parameters**
-* POST body parameters: 
-  * `name` (optional) - name of customer
-  * `message` (required) - contact message
-  * `email` (required) - email of customer
-
-**Example Request:** `/contact`
-* POST body parameters: 
-  * `name=''`
-  * `message='Lorem says hello'`
-  * `email='lorem@ipsum.edu'`
+**Example Request:** `/categories/badracingtype`
 
 **Example Response:**
-```Your message was received! We will send an email back soon.```
+```Cound not find this motorsport.  ```
 
+
+## *GET /daily_fact
+**Returned Data Format**: Text
+
+**Description:**
+Returns a text of today's fun fact. 
+
+**Parameters**
+* None
+
+**Example Request:** `/daily_fact`
+
+**Example Response:**
+```Each F1/Indycar vehicle consists of over 8,000 parts. 
+```
 **Error Handling:**
-* 400: Invalid request missing required `message` or `email` parameter.
+* 500: Invalid request if there is no fact today.  
 
-**Example Request:** `/contact`
-* POST body parameters: 
-  * `name='Lorem'`
-  * `message='Hello!'`
+<!-- **Example Request:** `/daily_fact` -->
 
 **Example Response:**
-```Missing required POST parameters for /contact: email.```
+```Could not find today's fun fact.   ```
